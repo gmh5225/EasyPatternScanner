@@ -3,6 +3,7 @@
 name = "EasyPatternScanner"
 description = "Easy Pattern Scanner"
 
-[target.EasyPatternScanner]
+[target.EasyPatternScannerLib]
 type = "library"
-sources = ["src/EasyPatternScanner.cpp"]
+sources = ["src/**.cpp", "src/**.h"]
+

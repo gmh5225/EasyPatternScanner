@@ -27,36 +27,34 @@ if(CMKR_ROOT_PROJECT)
 	configure_file(cmake.toml cmake.toml COPYONLY)
 endif()
 
-project(cmkr_for_beginners
+project(EasyPatternScanner
 	DESCRIPTION
-		"A minimal cmkr project."
+		"Easy Pattern Scanner"
 )
 
-# Target hello_world
-set(CMKR_TARGET hello_world)
-set(hello_world_SOURCES "")
+# Target EasyPatternScannerLib
+set(CMKR_TARGET EasyPatternScannerLib)
+set(EasyPatternScannerLib_SOURCES "")
 
-list(APPEND hello_world_SOURCES
-	"src/main.cpp"
+list(APPEND EasyPatternScannerLib_SOURCES
+	"src/EasyPatternHelper.cpp"
+	"src/EasyPatternScannerLib.cpp"
+	"src/EasyPatternHelper.h"
+	"src/EasyPatternScannerLib.h"
 )
 
-list(APPEND hello_world_SOURCES
+list(APPEND EasyPatternScannerLib_SOURCES
 	cmake.toml
 )
 
-set(CMKR_SOURCES ${hello_world_SOURCES})
-add_executable(hello_world)
+set(CMKR_SOURCES ${EasyPatternScannerLib_SOURCES})
+add_library(EasyPatternScannerLib)
 
-if(hello_world_SOURCES)
-	target_sources(hello_world PRIVATE ${hello_world_SOURCES})
+if(EasyPatternScannerLib_SOURCES)
+	target_sources(EasyPatternScannerLib PRIVATE ${EasyPatternScannerLib_SOURCES})
 endif()
 
-get_directory_property(CMKR_VS_STARTUP_PROJECT DIRECTORY ${PROJECT_SOURCE_DIR} DEFINITION VS_STARTUP_PROJECT)
-if(NOT CMKR_VS_STARTUP_PROJECT)
-	set_property(DIRECTORY ${PROJECT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT hello_world)
-endif()
-
-source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${hello_world_SOURCES})
+source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${EasyPatternScannerLib_SOURCES})
 
 unset(CMKR_TARGET)
 unset(CMKR_SOURCES)

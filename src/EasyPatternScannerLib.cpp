@@ -3,8 +3,8 @@
 
 namespace EasyPatternScannerLib {
 
-void PatternScanner::SetRPMCallback(pfnRPMCallback Callback) {
-  mPfnRPMCallback = Callback;
+void PatternScanner::SetReadCallback(pfnReadCallback Callback) {
+  mReadCallback = Callback;
 }
 
 bool PatternScanner::SearchSig(unsigned int PID, void *StartAddr, size_t Size,
@@ -17,7 +17,7 @@ bool PatternScanner::SearchSig(unsigned int PID, void *StartAddr, size_t Size,
     return false;
   }
 
-  if (nullptr == mPfnRPMCallback) {
+  if (nullptr == mReadCallback) {
     return false;
   }
 
@@ -28,7 +28,7 @@ bool PatternScanner::SearchSig(unsigned int PID, void *StartAddr, size_t Size,
 
   do {
 
-    Ret = mPfnRPMCallback(PID, StartAddr, LocalBuf, Size);
+    Ret = mReadCallback(PID, StartAddr, LocalBuf, Size);
     if (!Ret) {
       break;
     }

@@ -4,5 +4,5 @@ name = "EasyPatternScanner"
 description = "Easy Pattern Scanner"
 
 [target.EasyPatternScanner]
-type = "executable"
-sources = ["src/main.cpp"]
+type = "library"
+sources = ["src/EasyPatternScanner.cpp"]

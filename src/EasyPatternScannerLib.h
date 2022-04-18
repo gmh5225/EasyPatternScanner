@@ -9,7 +9,8 @@ private:
 
 public:
   void SetReadCallback(pfnReadCallback Callback);
-  bool SearchSig(unsigned int PID, void *StartAddr, size_t Size, char *Sig,
+  bool SearchSig(unsigned int PID, void *StartAddr, size_t Size,
+                 const char *Sig,
                  /*OUT*/ void **ResultAddr);
 };
 

@@ -8,7 +8,7 @@ void PatternScanner::SetReadCallback(pfnReadCallback Callback) {
 }
 
 bool PatternScanner::SearchSig(unsigned int PID, void *StartAddr, size_t Size,
-                               char *Sig,
+                               const char *Sig,
                                /*OUT*/ void **ResultAddr) {
 
   bool Ret = false;

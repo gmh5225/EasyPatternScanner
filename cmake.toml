@@ -5,5 +5,7 @@ description = "Easy Pattern Scanner"
 
 [target.EasyPatternScannerLib]
 type = "library"
+headers = ["include/**.h"]
 sources = ["src/**.cpp", "src/**.h"]
+include-directories = ["include"]
 

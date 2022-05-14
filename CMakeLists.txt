@@ -40,7 +40,7 @@ list(APPEND EasyPatternScannerLib_SOURCES
 	"src/EasyPatternHelper.cpp"
 	"src/EasyPatternScannerLib.cpp"
 	"src/EasyPatternHelper.h"
-	"src/EasyPatternScannerLib.h"
+	"include/EasyPatternScannerLib.h"
 )
 
 list(APPEND EasyPatternScannerLib_SOURCES
@@ -55,6 +55,10 @@ if(EasyPatternScannerLib_SOURCES)
 endif()
 
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${EasyPatternScannerLib_SOURCES})
+
+target_include_directories(EasyPatternScannerLib PUBLIC
+	include
+)
 
 unset(CMKR_TARGET)
 unset(CMKR_SOURCES)

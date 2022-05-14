@@ -2,7 +2,7 @@
 
 ## Example
 ```C++
-#include "EasyPatternScannerLib.h"
+#include "EasyPatternScanner/include/EasyPatternScannerLib.h"
 EasyPatternScannerLib::PatternScanner PS;
 PS.SetReadCallback(Your ReadProcessMemory Function);
 void* ResultAddr = nullptr;
